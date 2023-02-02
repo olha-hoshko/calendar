@@ -1,0 +1,35 @@
+$white-transparent: #ffffffcb;
+$white: #ffffff;
+$dark-red: #b92236a3;
+$another-month-day: #eed4d48f;
+$another-month-day-hover: #f9e2e2db;
+
+.days-of-week {
+    p {
+        font-size: 15px;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            color: $white;
+            transform: scale(1.3);
+        }
+    }
+
+    .current-day {
+        border: 1px solid $white-transparent;
+        border-radius: 50%;
+
+        &:hover {
+            border: 1px solid transparent;
+            background-color: $dark-red;
+        }
+    }
+
+    .another-month-day {
+        color: $another-month-day;
+        &:hover {
+            color: $another-month-day-hover;
+        }
+    }
+}

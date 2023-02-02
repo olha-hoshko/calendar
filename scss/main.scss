@@ -1,0 +1,95 @@
+$main-font: Helvetica, sans-serif;
+
+$white-transparent: #ffffffcb;
+$black: #000000;
+$bg-and-shadow: #1e1e1e;
+$main-bg-yellow: #c7c47f;
+$main-bg-peach: #ff8080;
+
+$main-bg-crimson: #934040;
+$main-bg-orange: #cd8850;
+
+$main-bg-violet: #543fa1;
+$main-bg-blue: #00a1be;
+
+$main-bg-dark-green: #5a993b;
+$main-bg-green: #22c78d;
+
+@mixin calendarTheme ($bottom-color, $top-color) {
+    background: linear-gradient(0deg, $bottom-color 0%, $top-color 64%);;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-and-shadow;
+    font-family: $main-font;
+
+    .summer-theme {
+        @include calendarTheme($main-bg-yellow, $main-bg-peach);
+    }
+
+    .autumn-theme {
+        @include calendarTheme($main-bg-crimson, $main-bg-orange);
+    }
+
+    .winter-theme {
+        @include calendarTheme($main-bg-violet, $main-bg-blue);
+    }
+
+    .spring-theme {
+        @include calendarTheme($main-bg-dark-green, $main-bg-green);
+    }
+
+    main {
+        width: 320px;
+        height: 350px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 7px;
+        color: $white-transparent;
+
+        .calendar-header, .calendar-weeks, .days-of-week {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .calendar-header, .calendar-weeks, .days-of-week:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        h3, .days-of-week p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 35px;
+            height: 35px;
+        }
+
+        .calendar-header {
+            h2 {
+                font-size: 27px;
+                text-transform: uppercase;
+            }
+        }
+
+        .calendar-weeks {
+            h3 {
+                font-size: 17px;
+            }
+        }
+    }
+}
